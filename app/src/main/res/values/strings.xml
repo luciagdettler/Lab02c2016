@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Lab02c2016</string>
     <string name="titulo">Pedite la Cena!!!</string>
+    <string name="textoBotonOn">Delivery</string>
+    <string name="textoBotonOff">Reservar Mesa</string>
     <string name="selechorario">Seleccione el horario:</string>
+    <string name="textoSwitch">Notificar reserva 1 hora antes</string>
 
 </resources>
