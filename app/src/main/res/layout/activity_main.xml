@@ -80,12 +80,13 @@
 
     <RadioGroup
         android:id="@+id/opciones_pedido"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
         android:layout_below="@+id/txPedido"
-        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
         android:colorAccent="@color/colorAccent">
 
         <RadioButton
