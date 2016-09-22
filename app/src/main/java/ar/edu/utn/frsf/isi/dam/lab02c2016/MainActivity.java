@@ -51,26 +51,34 @@ public class MainActivity extends AppCompatActivity implements OnCheckedChangeLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
         iniciarListas();
-        pedido.setMovementMethod(new ScrollingMovementMethod());
-        ArrayAdapter adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, horarios);
+       
         spHorarios = (Spinner) findViewById(R.id.spHorarios);
-        spHorarios.setAdapter(adapter);
-        pedido = (TextView) findViewById(R.id.txPedido);
         radioGroup = (RadioGroup) findViewById(R.id.opciones_pedido);
         radioPlato = (RadioButton) findViewById(R.id.btplato);
         radioPostre = (RadioButton) findViewById(R.id.btpostre);
         radioBebida = (RadioButton) findViewById(R.id.btbebida);
+        pedido = (TextView) findViewById(R.id.txPedido);
         btAgregar = (Button) findViewById(R.id.btagregar);
         btConfirmar = (Button) findViewById(R.id.btconfirmar);
         btReiniciar = (Button) findViewById(R.id.btreiniciar);
-        PedidoConfirmado=false;
-        elementosPedidos = new ArrayList<ElementoMenu>();
         lv = (ListView) findViewById(R.id.listView);
+        
+        PedidoConfirmado=false;
+         elementosPedidos = new ArrayList<ElementoMenu>();
+       
+        //Adaptador para spinner
+        ArrayAdapter adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, horarios);
+        spHorarios.setAdapter(adapter);
+        
+        //Adaptador para listView
         listAdapter1 = new ArrayAdapter<ElementoMenu>(this,android.R.layout.simple_list_item_single_choice);
         lv.setAdapter(listAdapter1);
         lv.setChoiceMode(lv.CHOICE_MODE_SINGLE);
-
+        
+        //pedido.setMovementMethod(new ScrollingMovementMethod());
+        
         radioGroup.setOnCheckedChangeListener(this);
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
